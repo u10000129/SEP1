@@ -1,4 +1,4 @@
-
+package gradeSystem;
 public class UI {
 	
 	UI() {
@@ -6,7 +6,7 @@ public class UI {
 	}
 	
 	public void checkID() {
-		return null;
+		
 	}
 	
 	public void promptCommand() {

@@ -1,4 +1,4 @@
-
+package gradeSystem;
 public class Grades {
 	String name;
 	String ID;
