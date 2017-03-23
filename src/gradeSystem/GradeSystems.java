@@ -119,16 +119,4 @@ public class GradeSystems {
 		}
 	}
 	
-	private void showWeight(float[] weights) {
-		for(int i=0;i<5;i++)
-			System.out.println(gradeItemList[i]+"         "+Math.round(weights[i]*100)+"%");		
-	}
-	
-	private void scanWeight(float[] weights, Scanner scanner) {		
-		for(int i=0;i<5;i++) {
-			System.out.print(gradeItemList[i]+"       ");		
-			weights[i] = scanner.nextFloat()/100;
-		}				
-	}	
-	
 }
