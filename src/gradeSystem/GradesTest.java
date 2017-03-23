@@ -10,7 +10,7 @@ public class GradesTest {
 
 	@Before
 	public void setUp() throws Exception {
-		grade = new Grades("sdd","123",1,1,1,1,1);
+		grade = new Grades("sdd","123",80,80,80,80,80);
 	}
 
 	@After
@@ -19,8 +19,9 @@ public class GradesTest {
 	}
 
 	@Test
-	public void test() {
-		assertEquals(5, grade.calculateTotalGrade());
+	public void calculateTotalGradeTest() {
+		float weights[] = {0.2f, 0.2f, 0.2f, 0.2f, 0.2f};
+		assertEquals(80, grade.calculateTotalGrade(weights));
 	}
 
 }
