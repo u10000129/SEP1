@@ -30,7 +30,7 @@ public class GradeSystems {
 			BufferedReader reader = new BufferedReader(read);
 			String line;
 			while((line = reader.readLine())!=null && line.length()!=0) {
-				System.out.println(line);
+				//System.out.println(line);
 				String split_line[] = line.split(" ");
 				Grades grade = new Grades(	split_line[0],
 											split_line[1],
