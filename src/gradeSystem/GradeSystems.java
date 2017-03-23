@@ -11,7 +11,6 @@ import java.util.LinkedList;
 import java.util.Scanner;
 
 public class GradeSystems {
-<<<<<<< HEAD
 	float[] weights = {0.1f, 0.1f, 0.1f, 0.3f, 0.4f};
 	LinkedList<Grades> aList;
 	
@@ -128,27 +127,6 @@ public class GradeSystems {
     	else System.out.println("          finalExam:  "+temp.finalExam+"*");      	
     	if(temp.totalGrade>59)System.out.println("          total grade:  "+temp.totalGrade);
     	else System.out.println("          total grade:  "+temp.totalGrade+"*");      	
-=======
-	String curStudentId;
-	
-	boolean checkID(String studentID) {
-		curStudentId = studentID;
-		return true; // should return the student refer to student ID exist.
-	}
-	String getStudentName(String studentID){
-		return null; // should return student Name according its student ID.
-	}
-	void showGrade(){
-		
-	}
-	void showAverageGrade(){
-		
-	}
-	void showRank() {
-		
-	}
-	void modifyWeight() {
->>>>>>> 8e6e730dfc511aed710fece1a7ebd1fde65f4265
 		
 	}
 }
