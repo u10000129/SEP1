@@ -4,7 +4,7 @@ public class Grades {
 	String ID;
 	int lab1, lab2, lab3, midTerm, finalExam, totalGrade;
 	
-	Grades(String name, String ID, int lab1, int lab2, int lab3, int midTerm, int finalExam) {
+	public Grades(String name, String ID, int lab1, int lab2, int lab3, int midTerm, int finalExam) {
 		this.name = name;
 		this.ID = ID;
 		this.lab1 = lab1;
