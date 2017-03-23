@@ -1,4 +1,5 @@
-package gradeSystem;
+package junitTest;
+import gradeSystem.Grades;
 import static org.junit.Assert.*;
 
 import org.junit.After;

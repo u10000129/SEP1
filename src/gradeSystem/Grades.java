@@ -4,7 +4,12 @@ public class Grades {
 	String ID;
 	int lab1, lab2, lab3, midTerm, finalExam, totalGrade;
 	
+<<<<<<< HEAD
 	Grades(String ID, String name, int lab1, int lab2, int lab3, int midTerm, int finalExam) {
+=======
+	public Grades(String name, String ID, int lab1, int lab2, int lab3, int midTerm, int finalExam) {
+		this.name = name;
+>>>>>>> 8e6e730dfc511aed710fece1a7ebd1fde65f4265
 		this.ID = ID;
 		this.name = name;
 		this.lab1 = lab1;
