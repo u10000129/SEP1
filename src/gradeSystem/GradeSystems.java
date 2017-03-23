@@ -11,20 +11,26 @@ import java.util.LinkedList;
 import java.util.Scanner;
 
 public class GradeSystems {
-	float[] weights = {0.1f, 0.1f, 0.1f, 0.3f, 0.4f};
+	float[] weights = {0.1f,0.1f,0.1f,0.3f,0.4f};
 	LinkedList<Grades> aList;
+	String[] gradeItemList = {	"lab1          ",
+								"lab2          ",
+								"lab3          ",
+								"mid-term      ",
+								"final exam    ",
+								"total grade   "};
 	
 	
 	public GradeSystems() {
 		aList = new LinkedList<Grades>();
 
 		try {
-			File f = new File("gradeinput.txt");
-			InputStreamReader read = new InputStreamReader (new FileInputStream(f));
+			File f = new File("inputdata.txt");
+			InputStreamReader read = new InputStreamReader (new FileInputStream(f),"UTF-8");
 			BufferedReader reader = new BufferedReader(read);
 			String line;
 			while((line = reader.readLine())!=null && line.length()!=0) {
-				//System.out.println(line);
+				System.out.println(line);
 				String split_line[] = line.split(" ");
 				Grades grade = new Grades(	split_line[0],
 											split_line[1],
@@ -53,10 +59,16 @@ public class GradeSystems {
 		return false;
 	}
 	
-	public void showGrade(String ID) {
+	public void showGrade(String ID) {		
 		for (Grades temp : aList) {
             if(temp.ID.equals(ID)) {
-            	showGradePrint(temp);
+            	System.out.println(temp.name+"成績：");
+            	for(int i=0;i<5;i++) {
+        			if(temp.gradeList[i]>59) System.out.println("           "+gradeItemList[i]+temp.gradeList[i]);
+        	    	else System.out.println("           "+gradeItemList[i]+temp.gradeList[i]+"*");
+        		}
+            	if(temp.totalGrade>59) System.out.println("           "+gradeItemList[5]+temp.totalGrade);
+    	    	else System.out.println("           "+gradeItemList[5]+temp.totalGrade+"*");
             }
         }		
 	}
@@ -77,56 +89,46 @@ public class GradeSystems {
 	
 	public void updateWeights() {
 		System.out.println("舊配分");
-		showWeight(weights);
+		for(int i=0;i<5;i++) System.out.println(gradeItemList[i]+"         "+Math.round(weights[i]*100)+"%");		
 		System.out.println("輸入新配分");
 		float weights_temp[] = new float[5];
 		Scanner scanner = new Scanner(System.in);
-		scanWeight(weights_temp, scanner);
-		System.out.println("請確認新配分");
-		showWeight(weights_temp);
-		System.out.print("以上正確嗎? Y (Yes) 或 N (No):");		
-		if(scanner.next().equals("Y")) {
-			for(int i=0;i<5;i++) weights[i] = weights_temp[i];
+		for(int i=0;i<5;i++) {
+			System.out.print(gradeItemList[i]+"       ");		
+			weights_temp[i] = scanner.nextFloat()/100;
 		}
+		System.out.println("請確認新配分");
+		for(int i=0;i<5;i++) System.out.println(gradeItemList[i]+"         "+Math.round(weights[i]*100)+"%");		
+		System.out.print("以上正確嗎? Y (Yes) 或 N (No):");		
+		if(scanner.next().equals("Y")) weights = weights_temp.clone();
 		scanner.close();
 		for (Grades temp : aList) temp.calculateTotalGrade(weights);
 		
 	}
 	
+	public void showAverages() {
+		int[] averageList = new int[6];		
+		for (Grades temp : aList) {
+			for(int i=0;i<5;i++) averageList[i] += temp.gradeList[i];
+			averageList[5] += temp.totalGrade;
+        }
+		System.out.println("平均成績：");
+		for(int i=0;i<6;i++) {
+			averageList[i] = averageList[i]/aList.size();
+			System.out.println("           "+gradeItemList[i]+averageList[i]);
+		}
+	}
+	
 	private void showWeight(float[] weights) {
-		System.out.println("lab1         "+Math.round(weights[0]*100)+"%");
-		System.out.println("lab2         "+Math.round(weights[1]*100)+"%");
-		System.out.println("lab3         "+Math.round(weights[2]*100)+"%");
-		System.out.println("mid-term     "+Math.round(weights[3]*100)+"%");
-		System.out.println("final exam   "+Math.round(weights[4]*100)+"%");		
+		for(int i=0;i<5;i++)
+			System.out.println(gradeItemList[i]+"         "+Math.round(weights[i]*100)+"%");		
 	}
 	
 	private void scanWeight(float[] weights, Scanner scanner) {		
-		System.out.print("lab1       ");		
-		weights[0] = scanner.nextFloat()/100;
-		System.out.print("lab2       ");		
-		weights[1] = scanner.nextFloat()/100;
-		System.out.print("lab3       ");		
-		weights[2] = scanner.nextFloat()/100;
-		System.out.print("mid-term   ");		
-		weights[3] = scanner.nextFloat()/100;
-		System.out.print("final exam ");		
-		weights[4] = scanner.nextFloat()/100;			
-	}
+		for(int i=0;i<5;i++) {
+			System.out.print(gradeItemList[i]+"       ");		
+			weights[i] = scanner.nextFloat()/100;
+		}				
+	}	
 	
-	private void showGradePrint(Grades temp) {
-		if(temp.lab1>59) System.out.println(temp.name+"成績:lab1:       "+temp.lab1);
-    	else System.out.println(temp.name+"成績:lab1:       "+temp.lab1+"*");
-    	if(temp.lab2>59)System.out.println("          lab2:       "+temp.lab2);
-    	else System.out.println("          lab2:       "+temp.lab2+"*");
-    	if(temp.lab3>59)System.out.println("          lab3:       "+temp.lab3);
-    	else System.out.println("          lab3:       "+temp.lab3+"*");   
-    	if(temp.midTerm>59)System.out.println("          mid-term:   "+temp.midTerm);
-    	else System.out.println("          mid-term:   "+temp.midTerm+"*");          	
-    	if(temp.finalExam>59)System.out.println("          finalExam:  "+temp.finalExam);
-    	else System.out.println("          finalExam:  "+temp.finalExam+"*");      	
-    	if(temp.totalGrade>59)System.out.println("          total grade:  "+temp.totalGrade);
-    	else System.out.println("          total grade:  "+temp.totalGrade+"*");      	
-		
-	}
 }

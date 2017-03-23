@@ -50,5 +50,10 @@ public class GradeSystemsTest {
 	    System.setIn(in);
 	    gradeSystem.updateWeights();
 	}
+	
+	@Test
+	public void showAverages1() {		
+	    gradeSystem.showAverages();
+	}
 
 }
