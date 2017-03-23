@@ -1,4 +1,4 @@
-package gradeSystem;
+package junitTest;
 
 import static org.junit.Assert.*;
 
@@ -8,6 +8,8 @@ import java.io.InputStream;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+
+import gradeSystem.GradeSystems;
 
 public class GradeSystemsTest {
 	GradeSystems gradeSystem;

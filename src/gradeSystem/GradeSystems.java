@@ -15,7 +15,7 @@ public class GradeSystems {
 	LinkedList<Grades> aList;
 	
 	
-	GradeSystems() {
+	public GradeSystems() {
 		aList = new LinkedList<Grades>();
 
 		try {
