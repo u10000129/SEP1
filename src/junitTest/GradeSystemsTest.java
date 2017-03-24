@@ -45,9 +45,9 @@ public class GradeSystemsTest {
 	
 	@Test
 	public void updateWeights1() {		
-		String input = "20 20 20 20 20 Y";
-	    InputStream in = new ByteArrayInputStream(input.getBytes());
-	    System.setIn(in);
+		//String input = "20 20 20 20 20 Y";
+	    //InputStream in = new ByteArrayInputStream(input.getBytes());
+	    //System.setIn(in);
 	    gradeSystem.updateWeights();
 	}
 	

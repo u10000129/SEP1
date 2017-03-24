@@ -81,6 +81,7 @@ public class GradeSystems {
             	for (Grades temp : aList) {
                     if(temp.totalGrade > current.totalGrade) rank = rank+1; 
                 }
+            	System.out.println(current.name+"李威廷排名第"+rank);
             	return rank;
             }           
 		}
@@ -92,6 +93,7 @@ public class GradeSystems {
 		for(int i=0;i<5;i++) System.out.println(gradeItemList[i]+"         "+Math.round(weights[i]*100)+"%");		
 		System.out.println("輸入新配分");
 		float weights_temp[] = new float[5];
+		@SuppressWarnings("resource")
 		Scanner scanner = new Scanner(System.in);
 		for(int i=0;i<5;i++) {
 			System.out.print(gradeItemList[i]+"       ");		
@@ -101,7 +103,7 @@ public class GradeSystems {
 		for(int i=0;i<5;i++) System.out.println(gradeItemList[i]+"         "+Math.round(weights[i]*100)+"%");		
 		System.out.print("以上正確嗎? Y (Yes) 或 N (No):");		
 		if(scanner.next().equals("Y")) weights = weights_temp.clone();
-		scanner.close();
+		//scanner.close();
 		for (Grades temp : aList) temp.calculateTotalGrade(weights);
 		
 	}
@@ -117,6 +119,13 @@ public class GradeSystems {
 			averageList[i] = averageList[i]/aList.size();
 			System.out.println("           "+gradeItemList[i]+averageList[i]);
 		}
+	}
+	
+	public String getStudentName(String ID) {
+		for (Grades temp : aList) {
+            if(temp.ID.equals(ID)) return temp.name;
+        }
+		return null;
 	}
 	
 }
