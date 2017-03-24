@@ -10,16 +10,16 @@ public class UI {
 	public boolean checkCommand(String cmd) {
 		switch(cmd.toUpperCase()) {
 		case "G":
-			gradeSystems.showGrade();
+			gradeSystems.showGrade(curStudentID);
 			return true;
 		case "R":
-			gradeSystems.showRank();
+			gradeSystems.showRank(curStudentID);
 			return true;
 		case "A":
-			gradeSystems.showAverageGrade();
+			gradeSystems.showAverages();
 			return true;
 		case "W":
-			gradeSystems.modifyWeight();
+			gradeSystems.updateWeights();
 			return true;
 		case "E":
 			return false;
@@ -31,7 +31,7 @@ public class UI {
 	
 	public boolean checkID(String studentID) {
 		curStudentID = studentID;
-		return gradeSystems.checkID(studentID);
+		return gradeSystems.containID(studentID);
 	}
 	
 	public void promptCommand() {
