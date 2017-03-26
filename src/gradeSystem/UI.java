@@ -6,7 +6,7 @@ public class UI {
 	/**Constructor Usage
 	 * construct a grade system.
 	 */
-	UI() {
+	public UI() {
 		gradeSystems = new GradeSystems();
 	}
 	
