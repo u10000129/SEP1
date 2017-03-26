@@ -8,25 +8,13 @@ public class UI {
 	}
 	
 	public boolean checkCommand(String cmd) {
-		switch(cmd.toUpperCase()) {
-		case "G":
-			gradeSystems.showGrade(curStudentID);
-			return true;
-		case "R":
-			gradeSystems.showRank(curStudentID);
-			return true;
-		case "A":
-			gradeSystems.showAverages();
-			return true;
-		case "W":
-			gradeSystems.updateWeights();
-			return true;
-		case "E":
-			return false;
-		default:
-			System.out.println("Hello World");
-			return false;
-		}
+		if(cmd.toUpperCase().equals("G")) gradeSystems.showGrade(curStudentID);
+		else if(cmd.toUpperCase().equals("R")) gradeSystems.showRank(curStudentID);
+		else if(cmd.toUpperCase().equals("A")) gradeSystems.showAverages();
+		else if(cmd.toUpperCase().equals("W")) gradeSystems.updateWeights();
+		else if(cmd.toUpperCase().equals("E")) return false;
+		else System.out.println("Input Command Wrong!");
+		return true;
 	}
 	
 	public boolean checkID(String studentID) {
