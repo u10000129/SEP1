@@ -30,7 +30,13 @@ public class GradeSystemsTest {
 		System.setOut(null);
 
 	}
-
+	/**
+	 * Unit test
+	 * test method containID()
+	 * 
+	 * case1:ID "985002038"
+	 * case2:ID "985102038"
+	 */
 	@Test
 	public void containID1() {
 		assertEquals(true, gradeSystem.containID("985002038"));
@@ -40,7 +46,13 @@ public class GradeSystemsTest {
 	public void containID2() {
 		assertEquals(false, gradeSystem.containID("985102038"));
 	}
-	
+	/**
+	 * Unit test
+	 * test method showGrade()
+	 * 
+	 * case1:ID "985002038"
+	 * case2:ID "985002016"
+	 */
 	@Test
 	public void showGrade1() {
 		gradeSystem.showGrade("985002038");
@@ -70,7 +82,13 @@ public class GradeSystemsTest {
 		assertEquals(ans,outContent.toString());
 
 	}
-	
+	/**
+	 * Unit test
+	 * test method showRank()
+	 * 
+	 * case1:ID "985002038"
+	 * case2:ID "985002005"
+	 */
 	@Test
 	public void showRank1() {
 		assertEquals(16, gradeSystem.showRank("985002038"));
@@ -80,7 +98,13 @@ public class GradeSystemsTest {
 	public void showRank2() {
 		assertEquals(31, gradeSystem.showRank("985002005"));
 	}
-	
+	/**
+	 * Unit test
+	 * test method updateWeights()
+	 * 
+	 * case1:input "20 20 20 20 20 Y"
+	 * case2:input "30 10 20 10 30 Y"
+	 */
 	@Test
 	public void updateWeights1() {		
 		String input = "20 20 20 20 20 Y";
@@ -142,7 +166,12 @@ public class GradeSystemsTest {
 		        +"           total grade   88\r\n";				
 		assertEquals(ans,outContent.toString());
 	}
-	
+	/**
+	 * Unit test
+	 * test method showAverages()
+	 * 
+	 * no input parameter
+	 */
 	@Test
 	public void showAverages1() {		
 	    gradeSystem.showAverages();
@@ -155,7 +184,13 @@ public class GradeSystemsTest {
            +"           total grade   89\r\n";
 	    assertEquals(ans,outContent.toString());
 	}
-	
+	/**
+	 * Unit test
+	 * test method getStudentName()
+	 * 
+	 * case1: "985002040"
+	 * case2: "985002003"
+	 */
 	@Test
 	public void getStudentName1() {			    
 	    String ans = "¨·»¨´Ë";           
