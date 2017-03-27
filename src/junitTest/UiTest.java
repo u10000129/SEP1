@@ -6,8 +6,7 @@ import org.junit.Test;
 
 import gradeSystem.UI;
 
-public class UiTest {
-	
+public class UiTest {	
 	protected UI ui;
 	
 	/**

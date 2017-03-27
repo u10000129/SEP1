@@ -13,8 +13,8 @@ import org.junit.Test;
 
 import gradeSystem.GradeSystems;
 
-public class GradeSystemsTest {
-	GradeSystems gradeSystem;
+public class GradeSystemsTest {	
+	GradeSystems gradeSystem;	
 	private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
 
 	@Before

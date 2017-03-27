@@ -11,7 +11,7 @@ import java.util.LinkedList;
 import java.util.Scanner;
 
 public class GradeSystems {
-	float[] weights = {0.1f,0.1f,0.1f,0.3f,0.4f};
+	float[] weights = {0.1f,0.1f,0.1f,0.3f,0.4f};	
 	LinkedList<Grades> aList;
 	String[] gradeItemList = {	"lab1          ",
 								"lab2          ",

@@ -1,10 +1,9 @@
 package gradeSystem;
 public class Grades {
-	String name;
-	String ID;
-	int[] gradeList;
-	int totalGrade;
-	
+	String name;	
+	String ID;	
+	int[] gradeList;	
+	int totalGrade;	
 	/**Constructor Usage
 	 * construct and initialize a structure to store students' grade.
 	 * 
