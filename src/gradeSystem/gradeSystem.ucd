@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<editmodel:ClassDiagramEditModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:editmodel="editmodel.xmi" xmlns:options="options.xmi" size="762,1009" id="gradeSystem" metadata="uml2-1.0" initialized="true" tag="10" key="32303037303533312D313020477261646553797374656D">
+<editmodel:ClassDiagramEditModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:editmodel="editmodel.xmi" xmlns:options="options.xmi" size="762,1009" id="gradeSystem" metadata="uml2-1.0" initialized="true" scrolledY="576" tag="10" key="32303037303533312D313020477261646553797374656D">
   <children xsi:type="editmodel:ClassEditModel" name="Main" location="154,868" size="129,121" id="gradeSystem/Main" runTimeClassModel="input,main([Ljava.lang.String;),ui,scanner">
     <children xsi:type="editmodel:CompartmentEditModel" size="106,54">
       <children xsi:type="editmodel:AttributeEditModel" name="input" id="gradeSystem/Main#input"/>
