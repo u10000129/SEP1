@@ -9,8 +9,16 @@ public class Main {
 	
 	/**IdExist Usage
 	 * @return whether student ID that user input exist in system.
+	 * 
+	 * pseudo code: 
+	 * 1. Ask ui to do checkID(input) to check whether input student ID exist in system.
+	 * 2. If input student ID do exist, return true.
+	 *    Otherwise, ask ui to show wrong message and return false.
+	 * 
+	 * Time estimate: O(N), N for number of students.
+	 * 
+	 * Example: input 555 (wrong student ID), print wrong message and return false.
 	 */
-	
 	private static boolean IdExist() {
 		if(ui.checkID(input)==false) {
 			ui.showStudentIdWrongMsg();
@@ -18,11 +26,22 @@ public class Main {
 		}
 		return true;
 	}
+	
 	/** UserInput Usage
 	 * @return 0, 1 or 2 to distinguish user input. 
+	 * 
 	 * 0, shut down system
 	 * 1, user id wrong, re-ask user to enter ID or Quit
 	 * 2, continue to Function Mode
+	 * 
+	 * * pseudo code: 
+	 * 1. If input string equal to "Q", ask ui to show finish message and return 0.
+	 *    Otherwise, if user input student ID do not exist, return 1.
+	 *    Other situations return 2.
+	 * 
+	 * Time estimate: O(N), N for number of students.
+	 * 
+	 * Example: input Q, print finish message and return 0.
 	 */
 	private static int UserInput(){
 		if(input.toUpperCase().equals("Q")) {
@@ -40,6 +59,15 @@ public class Main {
 	/** functionMode Usage
 	 * 1st, Welcome user log in system, and indicate them their are 5 different commands(G, R, A, W, E).
 	 * 2nd, ask user enter command or log out.
+	 * 
+	 * pseudo code: 
+	 * 1. Ask ui to show welcome message.
+	 * 2. Use a loop to wait user to enter command (G, R, A, W or E).
+	 *    If user enter E, break the loop.
+	 * 
+	 * Time estimate: O(N), N for number of students.
+	 * 
+	 * Example: input E, break the loop.
 	 */
 	private static void functionMode() {
 		// show some welcome message
@@ -56,6 +84,16 @@ public class Main {
 	/**main Usage
 	 * 1st, welcome user and ask them to use student ID to log in.
 	 * 2nd, ask user to enter command.
+	 * 
+	 * pseudo code: 
+	 * 1. Ask ui to show welcome message.
+	 * 2. If user input Q, break the loop.
+	 * 3. If user input wrong student ID, continue to re-ask user input ID or Q.
+	 * 4. Else, enter function mode.
+	 * 
+	 * Time estimate: O(N), N for number of students.
+	 * 
+	 * Example: input E, break the loop and shut down whole system.
 	 */
 	public static void main(String[] args) {
 		while(true) {
