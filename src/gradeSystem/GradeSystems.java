@@ -194,7 +194,7 @@ public class GradeSystems {
         }
 		System.out.println("¥­§¡¦¨ÁZ¡G");
 		for(int i=0;i<6;i++) {
-			averageList[i] = averageList[i]/aList.size();
+			averageList[i] = Math.round(averageList[i]/aList.size());
 			System.out.println("           "+gradeItemList[i]+averageList[i]);
 		}
 	}
