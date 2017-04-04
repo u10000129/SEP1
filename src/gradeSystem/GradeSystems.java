@@ -8,7 +8,6 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.UnsupportedEncodingException;
 import java.util.LinkedList;
-import java.util.Scanner;
 
 public class GradeSystems {
 	float[] weights = {0.1f,0.1f,0.1f,0.3f,0.4f};	
@@ -157,21 +156,20 @@ public class GradeSystems {
 		for(int i=0;i<5;i++) System.out.println(gradeItemList[i]+"         "+Math.round(weights[i]*100)+"%");		
 		System.out.println("輸入新配分");
 		float weights_temp[] = new float[5];
-		@SuppressWarnings("resource")
-		Scanner scanner = new Scanner(System.in);
 		for(int i=0;i<5;i++) {
 			System.out.print(gradeItemList[i]+"       ");		
-			weights_temp[i] = scanner.nextFloat()/100;
+			weights_temp[i] = Main.scanner.nextFloat()/100;
 		}
 		System.out.println("請確認新配分");
 		for(int i=0;i<5;i++) System.out.println(gradeItemList[i]+"         "+Math.round(weights_temp[i]*100)+"%");		
 		System.out.print("以上正確嗎? Y (Yes) 或 N (No):");		
-		if(scanner.next().toUpperCase().equals("Y")) {
+		if(Main.scanner.next().toUpperCase().equals("Y")) {
 			weights = weights_temp.clone();
-			System.out.println("更新成功");	
+			System.out.println("更新成功");
 		}
 		else System.out.println("取消更新配分");		
 		//scanner.close();
+		Main.scanner.nextLine();
 		for (Grades temp : aList) temp.calculateTotalGrade(weights);
 		
 	}

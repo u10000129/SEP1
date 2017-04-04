@@ -107,6 +107,6 @@ public class Main {
 			/* user enter  G, R, A, W or E */
 			functionMode();
 		}
-		scanner.close();
+		//scanner.close();
 	}
 }

@@ -37,7 +37,7 @@ public class UI {
 		else if(cmd.toUpperCase().equals("A")) gradeSystems.showAverages();
 		else if(cmd.toUpperCase().equals("W")) gradeSystems.updateWeights();
 		else if(cmd.toUpperCase().equals("E")) return false;
-		else System.out.println("Input Command Wrong!");
+		else System.out.println("Input Command Wrong! - "+cmd);
 		return true;
 	}
 	
