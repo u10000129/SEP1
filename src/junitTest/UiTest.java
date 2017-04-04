@@ -2,7 +2,9 @@ package junitTest;
 
 import static org.junit.Assert.*;
 
+import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
+import java.io.InputStream;
 import java.io.PrintStream;
 
 import org.junit.Before;
@@ -32,25 +34,33 @@ public class UiTest {
 	@Test
 	public void test1() {
 		assertEquals(false, ui.checkCommand("E"));
+		System.setOut(new PrintStream(outContent));
 	}
 	
 	@Test
 	public void test2() {
 		assertEquals(true, ui.checkCommand("G"));
+		System.setOut(new PrintStream(outContent));
 	}
 	
 	@Test
 	public void test3() {
 		assertEquals(true, ui.checkCommand("R"));
+		System.setOut(new PrintStream(outContent));
 	}
 	
 	@Test
 	public void test4() {
 		assertEquals(true, ui.checkCommand("A"));
+		System.setOut(new PrintStream(outContent));
 	}
 	
 	@Test
 	public void test5() {
+		String input = "30 10 20 10 30 Y\n";
+	    InputStream in = new ByteArrayInputStream(input.getBytes());
+	    System.setIn(in);
+	    System.setOut(new PrintStream(outContent));
 		assertEquals(true, ui.checkCommand("W"));
 	}
 	

@@ -107,7 +107,7 @@ public class GradeSystemsTest {
 	 */
 	@Test
 	public void updateWeights1() {		
-		String input = "20 20 20 20 20 Y";
+		String input = "20 20 20 20 20 Y\n"+"30 10 20 10 30 Y\n";
 	    InputStream in = new ByteArrayInputStream(input.getBytes());
 	    System.setIn(in);
 	    gradeSystem.updateWeights();
@@ -138,7 +138,7 @@ public class GradeSystemsTest {
 	
 	@Test
 	public void updateWeights2() {		
-		String input = "30 10 20 10 30 Y";
+		String input = "30 10 20 10 30 Y\n";
 	    InputStream in = new ByteArrayInputStream(input.getBytes());
 	    System.setIn(in);
 	    gradeSystem.updateWeights();
